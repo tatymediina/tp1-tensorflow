@@ -21,3 +21,6 @@ cd toxicity-detector
 start index.html    # En Windows
 open index.html     # En macOS
 xdg-open index.html # En Linux
+```
+
+> Este proyecto **no requiere instalación con npm**. Todo funciona directamente en el navegador usando scripts externos (CDN).
