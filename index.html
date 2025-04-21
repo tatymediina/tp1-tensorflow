@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Detector de Toxicidad</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/toxicity"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background: #f4f4f4;
+    }
+    button {
+      padding: 10px 20px;
+      background: slateblue;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+    textarea {
+      width: 100%;
+      height: 80px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Detector de Toxicidad</h2>
+    <p>Escribe una palabra :</p>
+    <textarea id="inputText" placeholder="Ej: Eres un tonto..."></textarea><br>
+    <button onclick="analyzeText()">Analizar</button>
+
+    <div class="result" id="resultBox">
+      El resultado aparecerá acá...
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
