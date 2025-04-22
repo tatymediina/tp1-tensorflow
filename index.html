@@ -6,32 +6,91 @@
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/toxicity"></script>
   <style>
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      padding: 40px;
-      background: #f4f4f4;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #e9eff1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
     }
-    button {
-      padding: 10px 20px;
-      background: slateblue;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
+
+    .container {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    p {
       margin-bottom: 10px;
+      color: #555;
     }
+
     textarea {
       width: 100%;
-      height: 80px;
-      margin-bottom: 10px;
+      height: 100px;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      resize: none;
+      font-size: 16px;
+      margin-bottom: 15px;
+      transition: border 0.2s ease;
+    }
+
+    textarea:focus {
+      border-color: #6c63ff;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #6c63ff;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #5548c8;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #f0f0f0;
+      border-radius: 10px;
+      font-size: 14px;
+      color: #333;
+      min-height: 40px;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h2>Detector de Toxicidad</h2>
-    <p>Escribe una palabra :</p>
-    <textarea id="inputText" placeholder="Ej: Eres un tonto..."></textarea><br>
+    <p>Escribe una palabra en inglés:</p>
+    <textarea id="inputText" placeholder="Ej: Shut up"></textarea><br>
     <button onclick="analyzeText()">Analizar</button>
 
     <div class="result" id="resultBox">
